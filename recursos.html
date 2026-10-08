@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Hub Estudiantil - Recursos</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <h1>Mi Hub Estudiantil</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Perfil</a></li>
+                    <li><a href="recursos.html" class="active">Recursos/Intereses</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container main-content">
+        <!-- Sección Recursos Externos (Tarjetas) -->
+        <section>
+            <h2>Recursos de Utilidad</h2>
+            <div class="cards-grid">
+                <div class="card resource-card">
+                    <h3>GitHub</h3>
+                    <p>Plataforma de desarrollo colaborativo y control de versiones para alojar repositorios.</p>
+                    <a href="https://github.com" target="_blank" class="btn">Visitar GitHub</a>
+                </div>
+                <div class="card resource-card">
+                    <h3>W3Schools</h3>
+                    <p>Tutoriales web interactivos que cubren HTML, CSS, JavaScript y mucho más.</p>
+                    <a href="https://www.w3schools.com" target="_blank" class="btn">Visitar W3Schools</a>
+                </div>
+                <div class="card resource-card">
+                    <h3>MDN Web Docs</h3>
+                    <p>Documentación oficial y guías de referencia para tecnologías web abiertas.</p>
+                    <a href="https://developer.mozilla.org" target="_blank" class="btn">Visitar MDN</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Tabla de Asignaturas -->
+        <section class="table-section">
+            <h2>Estado de Asignaturas</h2>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Asignatura</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Desarrollo Web</td>
+                        <td>En curso</td>
+                    </tr>
+                    <tr>
+                        <td>Redes de Computadoras</td>
+                        <td>En curso</td>
+                    </tr>
+                    <tr>
+                        <td>Seguridad Informática</td>
+                        <td>Aprobada</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Sección Mini Formulario (Maquetado sin backend) -->
+        <section class="form-section">
+            <h2>Contacto / Comentarios</h2>
+            <form class="mini-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>Creado por David Abrego Santos y Angel Zhang - 2026</p>
+        </div>
+    </footer>
+</body>
+</html>
