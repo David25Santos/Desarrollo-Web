@@ -198,6 +198,13 @@ section h2, section h3 {
     color: #334155;
 }
 
+/* Grupo de una persona (perfil + hobbies + meta) */
+.persona {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 /* ==========================================
    4. RECURSOS (GRID/FLEX DE TARJETAS)
    ========================================== */
@@ -328,6 +335,37 @@ section h2, section h3 {
     outline: none;
     border-color: var(--primary);
     background-color: #ffffff;
+}
+
+/*  recursos.html */
+.resource-card .btn {
+    align-self: flex-start;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge--progress {
+    background-color: #e0e7ff;
+    color: var(--primary-hover);
+}
+
+.badge--done {
+    background-color: #ccfbf1;
+    color: #0f766e;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.mini-form .btn {
+    align-self: flex-start;
 }
 
 /* ==========================================
