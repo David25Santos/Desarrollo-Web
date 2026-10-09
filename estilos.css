@@ -1,0 +1,398 @@
+/* ==========================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================== */
+:root {
+    --primary: #4f46e5;         /* Índigo moderno */
+    --primary-hover: #4338ca;
+    --accent: #06b6d4;          /* Cian vibrante */
+    --bg-main: #f8fafc;         /* Fondo suave */
+    --bg-card: #ffffff;         /* Fondo de tarjetas */
+    --text-main: #0f172a;       /* Texto principal muy legible */
+    --text-muted: #64748b;      /* Texto secundario */
+    --border: #e2e8f0;          /* Bordes sutiles */
+    --radius: 12px;             /* Bordes redondeados modernos */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+    --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Utilidades */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.text-center { text-align: center; }
+
+/* ==========================================
+   2. HEADER Y NAVEGACIÓN MODERNA
+   ========================================== */
+.site-header {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+    background-color: #e0e7ff55;
+}
+
+/* ==========================================
+   3. CONTENIDO PRINCIPAL Y TARJETAS (FLEX)
+   ========================================== */
+.main-content {
+    flex: 1;
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+section h2, section h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: var(--text-main);
+}
+
+/* Tarjeta Base Estilizada */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Sección Perfil Estilizada */
+.perfil-section {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    background: linear-gradient(to right bottom, var(--bg-card), #f8fafc);
+}
+
+.perfil-avatar img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--shadow-md);
+    border: 4px solid #ffffff;
+}
+
+.perfil-info h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.perfil-info p {
+    color: var(--text-muted);
+}
+
+/* Lista de Hobbies */
+.hobbies-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.hobbies-list li {
+    background-color: var(--bg-card);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: border-color 0.2s;
+}
+
+.hobbies-list li::before {
+    content: "✦";
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.hobbies-list li:hover {
+    border-color: var(--primary);
+}
+
+/* Tarjeta Meta del Semestre (Destacada) */
+.meta-card {
+    background: linear-gradient(135deg, #e0e7ff, #ccfbf1);
+    border: 1px solid #c7d2fe;
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.meta-card h3 {
+    color: #312e81;
+}
+
+.meta-card p {
+    color: #334155;
+}
+
+/* Grupo de una persona (perfil + hobbies + meta) */
+.persona {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ==========================================
+   4. RECURSOS (GRID/FLEX DE TARJETAS)
+   ========================================== */
+.cards-grid {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.resource-card {
+    flex: 1;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.resource-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.resource-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Botones Modernos */
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.65rem 1.25rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+/* ==========================================
+   5. TABLA Y FORMULARIO ESTILIZADOS
+   ========================================== */
+.styled-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: var(--bg-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 1rem 1.25rem;
+    text-align: left;
+}
+
+.styled-table th {
+    background-color: #f1f5f9;
+    color: var(--text-main);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+}
+
+.styled-table td {
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+}
+
+.styled-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Mini Formulario */
+.mini-form {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: #f8fafc;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: #ffffff;
+}
+
+/*  recursos.html */
+.resource-card .btn {
+    align-self: flex-start;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge--progress {
+    background-color: #e0e7ff;
+    color: var(--primary-hover);
+}
+
+.badge--done {
+    background-color: #ccfbf1;
+    color: #0f766e;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.mini-form .btn {
+    align-self: flex-start;
+}
+
+/* ==========================================
+   6. FOOTER Y RESPONSIVO (MEDIA QUERY)
+   ========================================== */
+.site-footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 1.5rem 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+@media (max-width: 600px) {
+    .header-flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .perfil-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cards-grid {
+        flex-direction: column;
+    }
+}
